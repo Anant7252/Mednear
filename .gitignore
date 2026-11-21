@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+app/node_modules/
+server/node_modules/
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+server/venv/
+server/.venv/
+
+# Environment Variables & Secrets (CRITICAL: Never commit to public repo)
+.env
+.env.*
+server/.env
+app/.env*
+*.pem
+*.key
+
+# Expo & Mobile Build
+.expo/
+app/.expo/
+dist/
+web-build/
+expo-env.d.ts
+app/expo-env.d.ts
+.metro-health-check*
+*.tsbuildinfo
+
+# Native Builds
+ios/
+android/
+app/ios/
+app/android/
+*.jks
+*.p8
+*.p12
+*.mobileprovision
+
+# Logs & Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS & Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Agent & AI Configs
+.agents/
+.claude/
+.cursor/
+.devin/
