@@ -67,42 +67,6 @@ During medical emergencies or sudden illnesses, patients and caregivers face sev
 
 ---
 
-## 📂 Repository Structure
-
-```plaintext
-MedNear/
-├── app/                          # Mobile Frontend (React Native & Expo)
-│   ├── assets/                   # 3D Renders, Icons, Onboarding Illustrations
-│   ├── src/
-│   │   ├── api/                  # Axios HTTP client, Auth & Medicine endpoints
-│   │   ├── components/           # CustomTabBar (Liquid Glass), AmbientBackground, CurvedBottomBorder
-│   │   ├── context/              # Authentication & User state providers
-│   │   ├── lib/                  # Native modules (rn-liquid-glass shim)
-│   │   ├── screens/              # Splash, Onboarding, Login/Register, Home, Search, Reservations, Profile
-│   │   └── types/                # TypeScript interfaces and navigation params
-│   ├── App.tsx                   # App navigation root (Stack & Bottom Tabs)
-│   ├── tailwind.config.js        # NativeWind / TailwindCSS design tokens
-│   └── package.json
-│
-├── server/                       # Backend Microservice (FastAPI & PostgreSQL)
-│   ├── app/
-│   │   ├── api/v1/               # Versioned REST endpoints (auth, medicines, pharmacies)
-│   │   ├── core/                 # App configuration, database connection, JWT security
-│   │   ├── models/               # SQLAlchemy ORM models (Medicine, Pharmacy, Inventory, User)
-│   │   ├── schemas/              # Pydantic v2 validation and serialization schemas
-│   │   ├── services/             # Geospatial matching (geo_pharmacy service)
-│   │   └── main.py               # FastAPI application factory & CORS setup
-│   ├── data/                     # Indian medicine dataset (11,800+ formulations)
-│   ├── scripts/                  # Data migration & price enrichment pipelines
-│   ├── docker-compose.yml        # PostgreSQL 16 + PostGIS container orchestrator
-│   └── requirements.txt          # Python dependencies
-│
-├── .gitignore                    # Master exclusion file (secures secrets & build artifacts)
-└── README.md
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -162,18 +126,6 @@ npx expo start
 
 - Press **`w`** in the terminal to run in your Web browser.
 - Press **`a`** to launch on an Android emulator or scan the QR code with **Expo Go** on a physical phone.
-
----
-
-## 📡 REST API Reference
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `POST` | `/api/v1/auth/register` | Register a new user account with hashed credentials |
-| `POST` | `/api/v1/auth/login` | Authenticate user and issue JWT bearer token |
-| `GET` | `/api/v1/medicines/search` | Full-text query on medicine name and salt with pagination |
-| `GET` | `/api/v1/medicines/{id}` | Fetch full details, indications, manufacturer, and pricing |
-| `GET` | `/api/v1/pharmacies/nearby` | Geospatial lookup of pharmacies stocking medicine within radius |
 
 ---
 
